@@ -22,15 +22,12 @@ public class Utility
 	{
 		return rand.nextDouble();
 	}
-	public static void rplcstring() 
+	public static String rplcstring(String username, String sc2) 
 	{
-		String username="<user name>";
-	    System.out.println("HEllo "+username+" ,How are you?"); 
-		System.out.println("Enter username");
-		String sc=ipstring();
-	    username = username.replaceAll(username, sc);
-		System.out.println("HEllo "+username+" ,How are you?");
-			
+		
+	    String scv = username.replaceAll(username, sc2);
+		
+			return scv;
 	}
 	public static void flipcoin(int number)
 	{
@@ -86,7 +83,9 @@ public class Utility
 		for(int i=1;i<=number;i++)
 		{
 			answer=answer+1.0/i;
+			System.out.print("1/"+i+ " + ");
 		}
+		System.out.println(" = "+answer);
 		System.out.println("Harmonic number of "+number+" is "+answer);
 		
 	}
@@ -94,7 +93,7 @@ public class Utility
 	{
 		System.out.println("Prime factors are");
 		int factor,n,j;
-		for(int i=2;i<number;i++)
+		for(int i=2;i<=number;i++)
 		{
 			n=i;
 			for(j=2;j<=n;j++)
@@ -211,6 +210,53 @@ public class Utility
 	{
 		
 		
+	}
+	public void take2darray(int row, int column)
+	{
+	   int x[][]=new int[row][column];
+	   System.out.println("Enter the "+row*column+" elements in Array");
+	   for(int i=0;i<row;i++)
+	   		{
+		   		for(int j=0;j<column;j++)
+		   			{
+		   				x[i][j]=getnumber();
+		   			}
+	   		}
+	   System.out.println("Your 2D array is : ");
+	   for(int i=0;i<column;i++)
+	   		{
+		   		for(int j=0;j<row;j++)
+		   			{
+		   				System.out.print(x[i][j]+" ");
+		   			}
+		   		System.out.println(" ");
+	   		}
+	}
+	public int Gamnler(int trails, int stake, int goal) 
+	{
+	
+		int bets=0;
+		int wins=0;
+
+
+		for(int t=0;t<=trails;t++)
+		{
+		int cash=stake;
+		while(cash>0&&cash<goal)
+		{
+		bets++;
+		if(Math.random()<0.5)
+		cash++;
+		else
+		cash--;
+		}
+		if(cash==goal)
+		{
+		wins++;
+		}
+		return wins;
+		}
+		return 0;
 	}
 }
 	

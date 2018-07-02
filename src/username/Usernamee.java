@@ -9,7 +9,11 @@ public class Usernamee
 public static void main(String args[])
    {
 	   Utility m=new Utility();
-	   m.rplcstring();
-	  
+	   String username="<user name>";
+	   System.out.println("HEllo "+username+" ,How are you?"); 
+	   System.out.println("Enter username");
+	   String sc=m.ipstring();
+	   String replaced=m.rplcstring(username,sc);
+	  System.out.println("Hello "+replaced+" ,How are you?");
    }
 }

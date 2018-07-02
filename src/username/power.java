@@ -8,7 +8,15 @@ public class power
 		Utility u=new Utility();
 		System.out.println("Enter number less than 31");
 		number=u.getnumber();
-		u.power(number);
+		if(number<31)
+		{
+			u.power(number);	
+		}
+		else
+		{
+			System.out.println("Enter number less than 31");
+		}
+		
 		
 	}
 }
